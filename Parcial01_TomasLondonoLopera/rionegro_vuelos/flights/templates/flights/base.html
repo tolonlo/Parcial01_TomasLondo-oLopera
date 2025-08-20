@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vuelos Rionegro</title>
+    <style>
+        body {
+            font-family: system-ui, Arial, sans-serif;
+            margin: 20px;
+        }
+
+        nav a {
+            margin-right: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #608063;
+            padding: 8px;
+        }
+
+        th {
+            background: #c8bfff;
+            text-align: left;
+        }
+
+        .precio-azul {
+            color: blue;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #b2d8f5;
+        }
+
+        .errorlist {
+            color: #b00020;
+        }
+
+        .field {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        input,
+        select {
+            padding: 6px;
+            width: 100%;
+            max-width: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Vuelos Rionegro</h1>
+        <nav>
+            <a href="/" class="btn">Inicio</a>
+            <a href="/vuelos/registrar/" class="btn">Registrar vuelos</a>
+            <a href="/vuelos/" class="btn">Listar vuelos</a>
+            <a href="/vuelos/estadisticas/" class="btn">Estadísticas de vuelos</a>
+        </nav>
+        <hr>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>

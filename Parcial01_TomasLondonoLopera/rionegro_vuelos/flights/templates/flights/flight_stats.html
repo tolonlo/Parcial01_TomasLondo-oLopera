@@ -1,0 +1,24 @@
+{% extends 'flights/base.html' %}
+{% block content %}
+<h2>Estadísticas de vuelos</h2>
+<ul>
+    <li>{{ total_nacionales }} Nacional(es)</li>
+    <li>{{ total_internacionales }} Internacional(es)</li>
+</ul>
+<p>
+    Precio promedio de los vuelos <strong>Nacionales</strong>:
+    {% if avg_nacional %}
+        ${{ avg_nacional|floatformat:2 }}
+    {% else %}
+        — (no hay vuelos nacionales)
+    {% endif %}
+</p>
+<p>
+    Precio promedio de los vuelos <strong>Internacionales</strong>:
+    {% if avg_internacional %}
+        ${{ avg_internacional|floatformat:2 }}
+    {% else %}
+        — (no hay vuelos internacionales)
+    {% endif %}
+</p>
+{% endblock %}

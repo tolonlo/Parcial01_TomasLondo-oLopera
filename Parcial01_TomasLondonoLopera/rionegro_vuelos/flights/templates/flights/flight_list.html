@@ -1,0 +1,29 @@
+
+{% extends 'flights/base.html' %}
+{% block content %}
+<h2>Listado de vuelos</h2>
+{% if flights %}
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in flights %}
+        <tr>
+            <td>{{ f.id }}</td>
+            <td>{{ f.name }}</td>
+            <td>{{ f.type }}</td>
+            <td>${{ f.price|floatformat:2 }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No hay vuelos registrados.</p>
+{% endif %}
+{% endblock %}

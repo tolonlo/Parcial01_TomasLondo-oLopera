@@ -1,0 +1,24 @@
+{% extends 'flights/base.html' %}
+{% block content %}
+<h2>Registrar vuelo</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="field">
+        <label for="id_name">Nombre</label>
+        {{ form.name }}
+        {{ form.name.errors }}
+    </div>
+    <div class="field">
+        <label for="id_type">Tipo</label>
+        {{ form.type }}
+        {{ form.type.errors }}
+    </div>
+    <div class="field">
+        <label for="id_price">Precio (COP)</label>
+        {{ form.price }}
+        {{ form.price.errors }}
+    </div>
+    <button type="submit" class="btn">Guardar</button>
+</form>
+{% endblock %}
